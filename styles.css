@@ -1,0 +1,32 @@
+body {
+    background: lightcyan;
+}
+
+textarea, button, label {
+    font-family: Verdana, sans-serif;
+    font-size: x-large;
+    color: darkblue;
+}
+
+textarea {
+    width: 100%;
+    display: inline-block;
+}
+
+textarea {
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px dotted grey;
+    background: lightcyan;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+button {
+    width: 33%;
+    height: 2em;
+}
+
+div#butonye {
+    text-align: center;
+}

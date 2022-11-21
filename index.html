@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <input id="index" type="hidden">
+
+            <label for="asana">Asana</label>
+            <textarea id="asana" type="text"></textarea>
+
+            <label for="translation">Übersetzung</label>
+            <textarea id="translation"></textarea>
+
+            <label for="chakra">Chakra</label>
+            <textarea id="chakra" type=""></textarea>
+
+            <label for="energy">Energie</label>
+            <textarea id="energy" type="text"></textarea>
+
+            <div id="butonye">
+                <button id="reveal" type="button" accesskey="r" onclick="revealAsana()"><u>R</u>eveal</button>
+                <button id="next" type="button" accesskey="n" onclick="showNextAsana()"><u>N</u>ext</button>
+            </div>
+        </div>
+    </body>
+
+    <script type="module" src="main.js">
+    </script>
+</html>

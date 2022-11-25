@@ -77,10 +77,11 @@ const asanas = parseInputCsv(asanasCsv);
 window.showNextAsana = function () {
     let i = Math.floor(Math.random() * asanas.length);
     document.getElementById('index').value = i;
-    document.getElementById('asana').value = asanas[i].asana;
-    document.getElementById('translation').value = '';
-    document.getElementById('chakra').value = '';
-    document.getElementById('energy').value = '';
+    document.getElementById('reveal-count').value = 0;
+    document.getElementById('asana').innerText = asanas[i].asana;
+    document.getElementById('translation').innerText = '…';
+    document.getElementById('chakra').innerText = '…';
+    document.getElementById('energy').innerText = '…';
 
     document.getElementById('reveal').disabled = false;
     document.getElementById('next').disabled = true;
@@ -88,10 +89,20 @@ window.showNextAsana = function () {
 
 window.revealAsana = function () {
     let i = document.getElementById('index').value;
-    document.getElementById('translation').value = asanas[i].translation;
-    document.getElementById('chakra').value = asanas[i].chakra;
-    document.getElementById('energy').value = asanas[i].energy;
 
+    let revealCount = document.getElementById('reveal-count');
+    switch (+revealCount.value) {
+        case 0:
+            document.getElementById('translation').innerText = asanas[i].translation;
+            ++revealCount.value;
+            return;
+        case 1:
+            document.getElementById('chakra').innerText = asanas[i].chakra;
+            ++revealCount.value;
+            return;
+        case 2:
+            document.getElementById('energy').innerText = asanas[i].energy;
+    }
     document.getElementById('reveal').disabled = true;
     document.getElementById('next').disabled = false;
 }

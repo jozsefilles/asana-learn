@@ -3,27 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick%20Hand">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+              integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+              crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <link href="styles.css" rel="stylesheet">
     </head>
     <body>
-        <div>
+        <div class="container">
             <input id="index" type="hidden">
+            <input id="reveal-count" type="hidden">
 
-            <label for="asana">Asana</label>
-            <textarea id="asana" type="text"></textarea>
+            <h3>Asana</h3>
+            <h2 id="asana"></h2>
 
-            <label for="translation">Übersetzung</label>
-            <textarea id="translation"></textarea>
+            <h3>Übersetzung</h3>
+            <h2 id="translation"></h2>
 
-            <label for="chakra">Chakra</label>
-            <textarea id="chakra" type=""></textarea>
+            <h3>Chakra</h3>
+            <h2 id="chakra"></h2>
 
-            <label for="energy">Energie</label>
-            <textarea id="energy" type="text"></textarea>
+            <h3>Energie</h3>
+            <h2 id="energy"></h2>
 
-            <div id="butonye">
-                <button id="reveal" type="button" accesskey="r" onclick="revealAsana()"><u>R</u>eveal</button>
-                <button id="next" type="button" accesskey="n" onclick="showNextAsana()"><u>N</u>ext</button>
+            <div class="row">
+                <div class="one-half column">
+                    <button class="u-full-width button-primary" id="reveal" type="button" accesskey="r" onclick="revealAsana()">
+                        <u>R</u>eveal
+                    </button>
+                </div>
+                <div class="one-half column">
+                    <button class="u-full-width button-primary" id="next" type="button" accesskey="n" onclick="showNextAsana()">
+                        <u>N</u>ext
+                    </button>
+                </div>
             </div>
         </div>
     </body>

@@ -1,5 +1,5 @@
 import {Asana} from "./asana.js";
-import {ASANAS_CSV} from "./input-data";
+import {ASANAS_CSV} from "./input-data.js";
 
 function parseInputCsv(inputCsv) {
     const parsed = [];

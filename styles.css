@@ -2,6 +2,7 @@ html {
     background: rgb(156, 218, 255);
     background: linear-gradient(180deg, rgba(156, 218, 255, 1) 25%, rgba(255, 255, 255, 1) 72%, rgba(185, 255, 185, 1) 100%);
     height: 100vh;
+    font-size: 1.25rem;
 }
 
 h3 {
@@ -12,4 +13,16 @@ h3 {
 h2 {
     color: #444;
     font-family: 'Inconsolata';
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0%;
+    width: 67%;
+}
+
+button {
+    height: 8rem;
+    font-size: 2.5rem;
+    padding: 0.5rem;
 }

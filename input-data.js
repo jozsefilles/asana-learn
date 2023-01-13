@@ -1,4 +1,4 @@
-export const ASANAS_CSV = `
+export const ASANAS_CSV = `Asana;Übersetzung;Chakra;Energie
 Padahastasana;Vorwärtsbeuge im Stehen (Geste oder Hände zu den Füssen);Muladhara;tellurische
 Tadasana;Baumposition;-;kosmische
 Sahaja Agnisara Dhauti;Natürliche Reinigung mittels der Feueressenz;Manipura;biomagnetische
@@ -57,4 +57,27 @@ Utkatasana;"Aufsteigende
 geduckte Pose";"Muladhara
 Ajna";tellurische
 Sukhasana;Angenehme Pose;Svadhistana +/-;tellurische
+`;
+
+export const VLASTNOSTI_CSV = `Guna;Sanskrit;Váta;Pitta;Kapha
+Ťažkosť;GURU;-;-;+
+Ľahkosť;LAGHU;+;+;-
+Pomalosť, tuposť;MANDA;-;-;+
+Ostrosť, prenikavosť;TIKŠNA;+;+;-
+Chlad;ŠÍTA;+;-;+
+Teplo;UŠNA;-;+;-
+Mastnosť ;SNIGHDA;-;+;+
+Suchosť;RUKŠA;+;-;-
+Hladkosť, sliznatosť;ŠLAKŠNA;-;+;+
+Drsnosť;KHÁRA;+;-;-
+Tuhosť, hutnosť ;SANDRA;-;-;+
+Tekutosť ;DRAVA;-;+;+
+Mäkkosť;MRDU;-;+;+
+Tvrdosť;KATHINA;+;-;-
+Statičnosť;STHIRA;-;-;+
+Pohyblivosť;ČALA;+;+;-
+Jemnosť, jemnohmotnosť;SUKŠMA;+;+;-
+Hrubosť;STHÚLA;-;-;+
+Čírosť, priezračnosť ;VIŠADA;+;+;-
+Lepkavosť, nepriehľadnosť;PIČČHILA, ÁVILA;-;-;+
 `;

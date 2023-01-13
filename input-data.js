@@ -1,5 +1,4 @@
-export const ASANAS_CSV = `
-Asana;Übersetzung;Chakra;Energie
+export const ASANAS_CSV = `Asana;Übersetzung;Chakra;Energie
 Padahastasana;Vorwärtsbeuge im Stehen (Geste oder Hände zu den Füssen);Muladhara;tellurische
 Tadasana;Baumposition;-;kosmische
 Sahaja Agnisara Dhauti;Natürliche Reinigung mittels der Feueressenz;Manipura;biomagnetische

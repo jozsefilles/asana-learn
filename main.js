@@ -1,30 +1,23 @@
-import {Asana} from "./asana.js";
-import {ASANAS_CSV} from "./input-data.js";
+import {ASANAS_CSV} from './input-data.js';
 
 function parseInputCsv(inputCsv) {
     const parsed = [];
 
     let lines = inputCsv.split('\n');
+    const header = lines.shift().split(';');
     let buffer = '';
-    let header;
     for (const line of lines) {
-        if (line.trim() === "") {
+        if (line.trim() === '') {
             continue;
         }
 
         buffer += line;
         let fields = buffer.split(';');
-        if (fields.length < 4 || fields[3].lastIndexOf('"') == 0) {
+        if (fields.length < header.length || fields[header.length - 1].lastIndexOf('"') == 0) {
             buffer += ' ';
             continue;
         }
-
-        if (header) {
-            parsed.push(new Asana(...fields));
-        } else {
-            header = fields;
-        }
-
+        parsed.push(fields);
         buffer = '';
     }
 
@@ -51,7 +44,7 @@ window.showNextAsana = function () {
     let i = Math.floor(Math.random() * asanas.length);
     document.getElementById('index').value = i;
     document.getElementById('reveal-count').value = 0;
-    document.getElementById('field_0').innerText = asanas[i].asana;
+    document.getElementById('field_0').innerText = asanas[i][0];
     document.getElementById('field_1').innerText = '…';
     document.getElementById('field_2').innerText = '…';
     document.getElementById('field_3').innerText = '…';
@@ -66,15 +59,15 @@ window.revealAsana = function () {
     let revealCount = document.getElementById('reveal-count');
     switch (+revealCount.value) {
         case 0:
-            document.getElementById('field_1').innerText = asanas[i].translation;
+            document.getElementById('field_1').innerText = asanas[i][1];
             ++revealCount.value;
             return;
         case 1:
-            document.getElementById('field_2').innerText = asanas[i].chakra;
+            document.getElementById('field_2').innerText = asanas[i][2];
             ++revealCount.value;
             return;
         case 2:
-            document.getElementById('field_3').innerText = asanas[i].energy;
+            document.getElementById('field_3').innerText = asanas[i][3];
     }
     document.getElementById('reveal').disabled = true;
     document.getElementById('next').disabled = false;

@@ -37,40 +37,32 @@ function initPresenter(header) {
     }
 }
 
-const [header, asanas] = parseInputCsv(ASANAS_CSV);
+const [header, data] = parseInputCsv(ASANAS_CSV);
 initPresenter(header);
 
-window.showNextAsana = function () {
-    let i = Math.floor(Math.random() * asanas.length);
+window.loadNextQuest = function () {
+    let i = Math.floor(Math.random() * data.length);
     document.getElementById('index').value = i;
-    document.getElementById('reveal-count').value = 0;
-    document.getElementById('field_0').innerText = asanas[i][0];
-    document.getElementById('field_1').innerText = '…';
-    document.getElementById('field_2').innerText = '…';
-    document.getElementById('field_3').innerText = '…';
-
+    document.getElementById('reveal-count').value = 1;
+    document.getElementById('field_0').innerText = data[i][0];
+    for (let j = 1; j < header.length; ++j) {
+        document.getElementById(`field_${j}`).innerText = '…';
+    }
     document.getElementById('reveal').disabled = false;
     document.getElementById('next').disabled = true;
 }
 
-window.revealAsana = function () {
+window.revealNextField = function () {
     let i = document.getElementById('index').value;
-
     let revealCount = document.getElementById('reveal-count');
-    switch (+revealCount.value) {
-        case 0:
-            document.getElementById('field_1').innerText = asanas[i][1];
-            ++revealCount.value;
-            return;
-        case 1:
-            document.getElementById('field_2').innerText = asanas[i][2];
-            ++revealCount.value;
-            return;
-        case 2:
-            document.getElementById('field_3').innerText = asanas[i][3];
+    let j = +revealCount.value;
+    document.getElementById(`field_${j}`).innerText = data[i][j];
+    if (j >= header.length - 1) {
+        document.getElementById('reveal').disabled = true;
+        document.getElementById('next').disabled = false;
+    } else {
+        ++revealCount.value;
     }
-    document.getElementById('reveal').disabled = true;
-    document.getElementById('next').disabled = false;
 }
 
-window.showNextAsana();
+window.loadNextQuest();

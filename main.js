@@ -1,5 +1,10 @@
 import {ASANAS_CSV} from './input-data.js';
 
+const DATA_SETS = {
+    Asanas: ASANAS_CSV,
+    Vlastnosti: ASANAS_CSV
+};
+
 function parseInputCsv(inputCsv) {
     const parsed = [];
 
@@ -37,10 +42,7 @@ function initPresenter(header) {
     }
 }
 
-const [header, data] = parseInputCsv(ASANAS_CSV);
-initPresenter(header);
-
-window.loadNextQuest = function () {
+function loadNextQuest(header, data) {
     let i = Math.floor(Math.random() * data.length);
     document.getElementById('index').value = i;
     document.getElementById('reveal-count').value = 1;
@@ -52,7 +54,7 @@ window.loadNextQuest = function () {
     document.getElementById('next').disabled = true;
 }
 
-window.revealNextField = function () {
+function revealNextField(header, data) {
     let i = document.getElementById('index').value;
     let revealCount = document.getElementById('reveal-count');
     let j = +revealCount.value;
@@ -65,4 +67,13 @@ window.revealNextField = function () {
     }
 }
 
-window.loadNextQuest();
+function loadCsvData(csvData) {
+    const [header, data] = parseInputCsv(csvData);
+    initPresenter(header);
+    loadNextQuest(header, data);
+
+    window.loadNextQuest = () => loadNextQuest(header, data);
+    window.revealNextField = () => revealNextField(header, data);
+}
+
+loadCsvData(DATA_SETS.Asanas);

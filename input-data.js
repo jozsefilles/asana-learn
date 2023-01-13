@@ -58,3 +58,26 @@ geduckte Pose";"Muladhara
 Ajna";tellurische
 Sukhasana;Angenehme Pose;Svadhistana +/-;tellurische
 `;
+
+export const VLASTNOSTI_CSV = `Guna;Sanskrit;Váta;Pitta;Kapha
+Ťažkosť;GURU;-;-;+
+Ľahkosť;LAGHU;+;+;-
+Pomalosť, tuposť;MANDA;-;-;+
+Ostrosť, prenikavosť;TIKŠNA;+;+;-
+Chlad;ŠÍTA;+;-;+
+Teplo;UŠNA;-;+;-
+Mastnosť ;SNIGHDA;-;+;+
+Suchosť;RUKŠA;+;-;-
+Hladkosť, sliznatosť;ŠLAKŠNA;-;+;+
+Drsnosť;KHÁRA;+;-;-
+Tuhosť, hutnosť ;SANDRA;-;-;+
+Tekutosť ;DRAVA;-;+;+
+Mäkkosť;MRDU;-;+;+
+Tvrdosť;KATHINA;+;-;-
+Statičnosť;STHIRA;-;-;+
+Pohyblivosť;ČALA;+;+;-
+Jemnosť, jemnohmotnosť;SUKŠMA;+;+;-
+Hrubosť;STHÚLA;-;-;+
+Čírosť, priezračnosť ;VIŠADA;+;+;-
+Lepkavosť, nepriehľadnosť;PIČČHILA, ÁVILA;-;-;+
+`;

@@ -1,9 +1,9 @@
-import {ASANAS_CSV} from './input-data.js';
+import {ASANAS_CSV, VLASTNOSTI_CSV} from './input-data.js';
 
-const DATA_SETS = {
-    Asanas: ASANAS_CSV,
-    Vlastnosti: ASANAS_CSV
-};
+const DATA_SETS = new Map([
+    ['Vlastnosti', VLASTNOSTI_CSV],
+    ['Asanas', ASANAS_CSV],
+]);
 
 function parseInputCsv(inputCsv) {
     const parsed = [];
@@ -31,6 +31,7 @@ function parseInputCsv(inputCsv) {
 
 function initPresenter(header) {
     const presenter = document.getElementById('presenter');
+    presenter.innerHTML = '';
     for (let i = 0; i < header.length; ++i) {
         const label = document.createElement('h3');
         label.innerText = header[i];
@@ -76,4 +77,21 @@ function loadCsvData(csvData) {
     window.revealNextField = () => revealNextField(header, data);
 }
 
-loadCsvData(DATA_SETS.Asanas);
+function loadSelectedDataSet(select) {
+    const selected = select.options[dataSetSelect.selectedIndex].value;
+    loadCsvData(DATA_SETS.get(selected));
+}
+
+function initDataSetSelect(select) {
+    for (const k of DATA_SETS.keys()) {
+        const option = document.createElement('option');
+        option.setAttribute('value', k);
+        option.textContent = k;
+        select.appendChild(option);
+    }
+    loadSelectedDataSet(select);
+    window.loadSelectedDataSet = () => loadSelectedDataSet(dataSetSelect);
+}
+
+const dataSetSelect = document.getElementById('data-set-select');
+initDataSetSelect(dataSetSelect);

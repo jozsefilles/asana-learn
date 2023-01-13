@@ -12,6 +12,10 @@
     </head>
     <body>
         <div class="container">
+            <select name="data-set" id="data-set-select" onchange="loadSelectedDataSet()">
+                <!-- JS generated -->
+            </select>
+
             <input id="index" type="hidden">
             <input id="reveal-count" type="hidden">
 
@@ -21,7 +25,8 @@
 
             <div class="row bottom-bar">
                 <div class="one-half column">
-                    <button class="u-full-width button-primary" id="reveal" type="button" accesskey="r" onclick="revealNextField()">
+                    <button class="u-full-width button-primary" id="reveal" type="button" accesskey="r"
+                            onclick="revealNextField()">
                         <u>R</u>eveal
                     </button>
                 </div>
